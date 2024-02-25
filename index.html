@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | Nat Geo Wild</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+      </div>
+      <div class="content">
+        <h1>Log in to the world of Wild</h1>
+        <div class="tabs">
+          <button class="tab__btn active" data-tab="1">Log In</button>
+          <span></span>
+          <button class="tab__btn" data-tab="2">Sign Up</button>
+        </div>
+        <div class="tabs__panel">
+          <div class="panel active" data-panel="1">
+            <form action="/">
+              <div class="input__group">
+                <input type="email" placeholder=" " />
+                <label for="email">Email</label>
+              </div>
+              <div class="input__group">
+                <input type="password" id="login-password" placeholder=" " />
+                <label for="login-password">Password</label>
+                <span id="login-password-eye">
+                  <i class="ri-eye-off-fill"></i>
+                </span>
+              </div>
+              <button>Log In</button>
+              <p>or</p>
+              <a href="#">Forgot your password?</a>
+            </form>
+          </div>
+          <div class="panel" data-panel="2">
+            <form action="/">
+              <div class="input__group">
+                <input type="email" placeholder=" " />
+                <label for="email">Email</label>
+              </div>
+              <div class="input__group">
+                <input type="password" id="signup-password" placeholder=" " />
+                <label for="signup-password">Password</label>
+                <span id="signup-password-eye">
+                  <i class="ri-eye-off-fill"></i>
+                </span>
+              </div>
+              <div class="input__group">
+                <input type="password" id="confirm-password" placeholder=" " />
+                <label for="confirm-password">Confirm Password</label>
+                <span id="confirm-password-eye">
+                  <i class="ri-eye-off-fill"></i>
+                </span>
+              </div>
+              <button>Sign Up</button>
+              <p>or</p>
+              <a href="#">Already have an account? <span>Login</span></a>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="image"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

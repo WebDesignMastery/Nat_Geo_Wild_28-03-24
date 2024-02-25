@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #f7c703;
+  --text-dark: #030303;
+  --text-light: #676767;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--text-dark);
+}
+
+.container {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: grid;
+}
+
+.logo {
+  position: absolute;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 1rem;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  display: flex;
+  width: 100%;
+  max-width: 150px;
+}
+
+.content {
+  padding-block: 8rem 5rem;
+  padding-inline: 1rem;
+}
+
+.content h1 {
+  margin-bottom: 2rem;
+  max-width: 400px;
+  margin-inline: auto;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+}
+
+.tabs {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tab__btn {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tab__btn.active {
+  color: var(--primary-color);
+}
+
+.tabs span {
+  display: flex;
+  height: 1rem;
+  width: 2px;
+  background-color: var(--text-light);
+}
+
+.panel {
+  display: none;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.panel.active {
+  display: block;
+  animation: show-panel 0.3s forwards;
+}
+
+.panel.close {
+  animation: hide-panel 0.3s forwards;
+}
+
+@keyframes show-panel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide-panel {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.panel form {
+  display: grid;
+}
+
+.input__group {
+  margin-bottom: 2rem;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--text-light);
+}
+
+.input__group label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.input__group input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+}
+
+.input__group input:not(:placeholder-shown) ~ label,
+.input__group input:focus ~ label {
+  font-size: 0.7rem;
+  top: 0px;
+  color: var(--text-light);
+}
+
+.input__group span {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.panel form button {
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  padding: 0.5rem 2.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.panel form p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.panel form a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.panel form a span {
+  color: var(--primary-color);
+}
+
+.panel form a:hover {
+  color: var(--white);
+}
+
+.image {
+  height: 100%;
+  min-height: 300px;
+  background-image: url("assets/header.jpg");
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (width > 540px) {
+  .image {
+    min-height: 450px;
+  }
+}
+
+@media (width > 768px) {
+  .container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, calc(var(--max-width) / 2))
+      minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .logo {
+    padding: 2rem 1rem;
+  }
+
+  .content {
+    padding-block: 2rem;
+    grid-area: 1/3/2/4;
+  }
+
+  .image {
+    grid-column: 1/3;
+  }
+}
